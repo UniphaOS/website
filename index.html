@@ -4,16 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="UniphaOS — public repositories and organization information from GitHub.">
-<title>UniphaOS</title>
+<title>UniphaOS — GitHub Organization</title>
 <style>
-    /* ============================================================
-       Monochrome design tokens
-       ============================================================ */
     :root {
         --bg: #ffffff;
         --bg-soft: #f7f7f7;
         --bg-hover: #efefef;
-        --bg-code: #f2f2f2;
         --text: #0a0a0a;
         --text-muted: #5c5c5c;
         --text-dim: #8c8c8c;
@@ -28,9 +24,6 @@
         --maxw: 1120px;
     }
 
-    /* ============================================================
-       Base
-       ============================================================ */
     *, *::before, *::after { box-sizing: border-box; }
 
     html {
@@ -43,8 +36,7 @@
         background-color: var(--bg);
         color: var(--text);
         font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-            "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Noto Sans SC",
-            "Noto Sans KR", Roboto, Helvetica, Arial, sans-serif;
+            Roboto, Helvetica, Arial, sans-serif;
         font-size: 16px;
         line-height: 1.7;
         -webkit-font-smoothing: antialiased;
@@ -87,9 +79,7 @@
 
     .muted { color: var(--text-dim); font-style: italic; }
 
-    /* ============================================================
-       Header
-       ============================================================ */
+    /* Header */
     header {
         position: sticky;
         top: 0;
@@ -160,38 +150,6 @@
         gap: 10px;
     }
 
-    /* ---- Language switcher ---- */
-    .lang-switch { position: relative; display: inline-flex; align-items: center; }
-
-    .lang-switch select {
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        padding: 7px 32px 7px 13px;
-        border: 1px solid var(--border-strong);
-        border-radius: var(--radius-sm);
-        background-color: var(--white);
-        color: var(--text);
-        font-family: inherit;
-        font-size: 0.84rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: border-color 0.18s ease, background-color 0.18s ease;
-    }
-
-    .lang-switch select:hover { background-color: var(--bg-hover); }
-    .lang-switch select:focus-visible {
-        outline: 2px solid var(--black);
-        outline-offset: 2px;
-    }
-
-    .lang-switch .chevron {
-        position: absolute;
-        right: 10px;
-        pointer-events: none;
-        color: var(--text-dim);
-    }
-
     .nav-toggle {
         display: none;
         place-items: center;
@@ -207,9 +165,7 @@
 
     .nav-toggle:hover { background-color: var(--bg-hover); }
 
-    /* ============================================================
-       Hero
-       ============================================================ */
+    /* Hero */
     .hero {
         position: relative;
         overflow: hidden;
@@ -319,9 +275,7 @@
         margin-top: 38px;
     }
 
-    /* ============================================================
-       Buttons
-       ============================================================ */
+    /* Buttons */
     .btn {
         display: inline-flex;
         align-items: center;
@@ -365,9 +319,7 @@
         outline-offset: 2px;
     }
 
-    /* ============================================================
-       Sections
-       ============================================================ */
+    /* Sections */
     section { padding: 88px 0; }
     section + section { border-top: 1px solid var(--border); }
 
@@ -401,9 +353,7 @@
         color: var(--text-muted);
     }
 
-    /* ============================================================
-       Repositories
-       ============================================================ */
+    /* Repositories */
     .repo-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -496,9 +446,7 @@
         background-color: var(--text-dim);
     }
 
-    /* ============================================================
-       States (loading / error / empty)
-       ============================================================ */
+    /* States */
     .state {
         padding: 48px 24px;
         border: 1px dashed var(--border-strong);
@@ -515,7 +463,6 @@
         margin-top: 18px;
     }
 
-    /* Skeleton */
     .skeleton-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -539,9 +486,7 @@
         100% { background-position: -60% 0; }
     }
 
-    /* ============================================================
-       Community
-       ============================================================ */
+    /* Community */
     .community-box {
         display: flex;
         flex-wrap: wrap;
@@ -567,9 +512,7 @@
         color: var(--text-muted);
     }
 
-    /* ============================================================
-       Footer
-       ============================================================ */
+    /* Footer */
     footer {
         border-top: 1px solid var(--border);
         background-color: var(--bg-soft);
@@ -624,9 +567,7 @@
         color: var(--text-dim);
     }
 
-    /* ============================================================
-       Responsive
-       ============================================================ */
+    /* Responsive */
     @media (max-width: 900px) {
         .footer-grid { grid-template-columns: 1fr 1fr; }
         .footer-brand { grid-column: 1 / -1; }
@@ -680,9 +621,6 @@
 </head>
 <body>
 
-<!-- ============================================================
-     SVG sprite
-     ============================================================ -->
 <svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <symbol id="i-mark" viewBox="0 0 24 24">
         <path d="M12 2.6l8.2 4.7v9.4L12 21.4 3.8 16.7V7.3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
@@ -708,13 +646,6 @@
     <symbol id="i-menu" viewBox="0 0 24 24">
         <path d="M4 7h16M4 12h16M4 17h16"/>
     </symbol>
-    <symbol id="i-chevron" viewBox="0 0 24 24">
-        <path d="M6 9l6 6 6-6"/>
-    </symbol>
-    <symbol id="i-arrow" viewBox="0 0 24 24">
-        <path d="M5 12h14"/>
-        <path d="M13 6l6 6-6 6"/>
-    </symbol>
     <symbol id="i-external" viewBox="0 0 24 24">
         <path d="M14 4h6v6"/>
         <path d="M20 4l-9 9"/>
@@ -722,9 +653,6 @@
     </symbol>
 </svg>
 
-<!-- ============================================================
-     Header
-     ============================================================ -->
 <header>
     <div class="container nav-inner">
         <a href="#top" class="logo" aria-label="UniphaOS">
@@ -736,28 +664,13 @@
 
         <nav id="primary-nav">
             <ul>
-                <li><a href="#repos" data-i18n="nav.repos">Repositories</a></li>
-                <li><a href="#community" data-i18n="nav.community">Community</a></li>
-                <li>
-                    <a href="https://github.com/UniphaOS" target="_blank" rel="noopener"
-                       data-i18n="nav.github">GitHub</a>
-                </li>
+                <li><a href="#repos">Repositories</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="https://github.com/UniphaOS" target="_blank" rel="noopener">GitHub</a></li>
             </ul>
         </nav>
 
         <div class="nav-actions">
-            <div class="lang-switch">
-                <select id="lang-select" aria-label="Language">
-                    <option value="en">English</option>
-                    <option value="ja">日本語</option>
-                    <option value="zh">简体中文</option>
-                    <option value="ko">한국어</option>
-                    <option value="es">Español</option>
-                    <option value="de">Deutsch</option>
-                </select>
-                <svg class="icon icon--16 chevron" aria-hidden="true"><use href="#i-chevron"></use></svg>
-            </div>
-
             <button class="nav-toggle" id="nav-toggle" type="button"
                     aria-label="Menu" aria-controls="primary-nav" aria-expanded="false">
                 <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
@@ -766,27 +679,24 @@
     </div>
 </header>
 
-<!-- ============================================================
-     Hero
-     ============================================================ -->
 <section class="hero" id="top">
     <div class="container hero-inner">
         <img id="org-avatar" class="hero-avatar" alt="" hidden>
-        <span class="badge" data-i18n="hero.badge">GitHub Organization</span>
+        <span class="badge">GitHub Organization</span>
         <h1 id="org-name">UniphaOS</h1>
         <p class="hero-handle" id="org-handle" hidden></p>
-        <p class="hero-lead" id="hero-lead" data-i18n="hero.fallback">
+        <p class="hero-lead" id="hero-lead">
             Public projects and activity are available on GitHub.
         </p>
 
         <div class="hero-stats" id="hero-stats" hidden>
             <div class="hero-stat">
                 <span class="hero-stat__value" id="stat-repos">—</span>
-                <span class="hero-stat__label" data-i18n="hero.stat.repos">Public repositories</span>
+                <span class="hero-stat__label">Public repositories</span>
             </div>
             <div class="hero-stat">
                 <span class="hero-stat__value" id="stat-followers">—</span>
-                <span class="hero-stat__label" data-i18n="hero.stat.followers">Followers</span>
+                <span class="hero-stat__label">Followers</span>
             </div>
         </div>
 
@@ -794,23 +704,20 @@
             <a href="https://github.com/UniphaOS" class="btn btn-primary"
                target="_blank" rel="noopener">
                 <svg class="icon icon--fill icon--18" aria-hidden="true"><use href="#i-github"></use></svg>
-                <span data-i18n="hero.cta.github">Open GitHub Organization</span>
+                <span>Open GitHub Organization</span>
             </a>
             <a href="#repos" class="btn btn-secondary">
-                <span data-i18n="hero.cta.browse">Browse repositories</span>
+                <span>Browse repositories</span>
             </a>
         </div>
     </div>
 </section>
 
-<!-- ============================================================
-     Repositories (fetched live from the GitHub API)
-     ============================================================ -->
 <section id="repos">
     <div class="container">
         <div class="section-head">
-            <h2 data-i18n="repos.title">Repositories</h2>
-            <p class="section-desc" data-i18n="repos.desc">
+            <h2>Repositories</h2>
+            <p class="section-desc">
                 Live list of public repositories from the UniphaOS organization on GitHub.
             </p>
         </div>
@@ -828,22 +735,17 @@
     </div>
 </section>
 
-<!-- ============================================================
-     Community
-     ============================================================ -->
 <section id="community">
     <div class="container">
         <div class="section-head">
-            <h2 data-i18n="community.title">Community</h2>
-            <p class="section-desc" data-i18n="community.desc">
-                Everything happens on GitHub.
-            </p>
+            <h2>Community</h2>
+            <p class="section-desc">Everything happens on GitHub.</p>
         </div>
 
         <div class="community-box">
             <div class="community-box__text">
-                <h3 data-i18n="community.box.title">UniphaOS on GitHub</h3>
-                <p data-i18n="community.box.text">
+                <h3>UniphaOS on GitHub</h3>
+                <p>
                     Browse the source code, follow the activity, report issues,
                     and open pull requests directly in the organization.
                 </p>
@@ -851,16 +753,13 @@
             <a href="https://github.com/UniphaOS" class="btn btn-primary"
                target="_blank" rel="noopener">
                 <svg class="icon icon--fill icon--18" aria-hidden="true"><use href="#i-github"></use></svg>
-                <span data-i18n="community.box.cta">Open organization</span>
+                <span>Open organization</span>
                 <svg class="icon icon--16" aria-hidden="true"><use href="#i-external"></use></svg>
             </a>
         </div>
     </div>
 </section>
 
-<!-- ============================================================
-     Footer
-     ============================================================ -->
 <footer>
     <div class="container">
         <div class="footer-grid">
@@ -871,28 +770,25 @@
                     </span>
                     <span>UniphaOS</span>
                 </a>
-                <p data-i18n="footer.tagline">
-                    All information on this page is fetched live from GitHub.
-                </p>
+                <p>All information on this page is fetched live from GitHub.</p>
             </div>
 
             <div class="footer-col">
-                <h4 data-i18n="footer.col.page">Page</h4>
-                <a href="#repos" data-i18n="nav.repos">Repositories</a>
-                <a href="#community" data-i18n="nav.community">Community</a>
+                <h4>Page</h4>
+                <a href="#repos">Repositories</a>
+                <a href="#community">Community</a>
             </div>
 
             <div class="footer-col">
-                <h4 data-i18n="footer.col.external">External</h4>
+                <h4>External</h4>
                 <a href="https://github.com/UniphaOS" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://api.github.com/users/UniphaOS" target="_blank" rel="noopener"
-                   data-i18n="footer.api">GitHub API</a>
+                <a href="https://api.github.com/users/UniphaOS" target="_blank" rel="noopener">GitHub API</a>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p data-i18n="footer.copyright">© 2026 UniphaOS.</p>
-            <p data-i18n="footer.source">Data source: GitHub REST API v3.</p>
+            <p>© 2026 UniphaOS.</p>
+            <p>Data source: GitHub REST API v3.</p>
         </div>
     </div>
 </footer>
@@ -901,261 +797,19 @@
 (function () {
     "use strict";
 
-    /* ==========================================================
-       Configuration
-       ========================================================== */
     var ORG_NAME = "UniphaOS";
-    var ORG_URL  = "https://github.com/" + ORG_NAME;
+    var ORG_URL = "https://github.com/" + ORG_NAME;
     var API_BASE = "https://api.github.com";
-    var STORAGE_KEY = "uniphaos-lang";
-    var SUPPORTED = ["en", "ja", "zh", "ko", "es", "de"];
 
-    /* ==========================================================
-       Translations
-       ========================================================== */
-    var translations = {
-
-        en: {
-            "meta.title": "UniphaOS — GitHub Organization",
-            "nav.repos": "Repositories",
-            "nav.community": "Community",
-            "nav.github": "GitHub",
-            "hero.badge": "GitHub Organization",
-            "hero.fallback": "Public projects and activity are available on GitHub.",
-            "hero.stat.repos": "Public repositories",
-            "hero.stat.followers": "Followers",
-            "hero.cta.github": "Open GitHub Organization",
-            "hero.cta.browse": "Browse repositories",
-            "repos.title": "Repositories",
-            "repos.desc": "Live list of public repositories from the UniphaOS organization on GitHub.",
-            "repos.loading": "Loading repositories from GitHub…",
-            "repos.empty": "No public repositories found.",
-            "repos.noDescription": "No description provided.",
-            "repos.error.notfound": "The organization was not found on GitHub.",
-            "repos.error.ratelimit": "GitHub API rate limit reached. Please try again later.",
-            "repos.error.generic": "Could not load repositories from GitHub.",
-            "repos.retry": "Retry",
-            "repos.fork": "Fork",
-            "repos.archived": "Archived",
-            "repos.updated": "Updated",
-            "repos.viewAll": "View all on GitHub",
-            "community.title": "Community",
-            "community.desc": "Everything happens on GitHub.",
-            "community.box.title": "UniphaOS on GitHub",
-            "community.box.text": "Browse the source code, follow the activity, report issues, and open pull requests directly in the organization.",
-            "community.box.cta": "Open organization",
-            "footer.tagline": "All information on this page is fetched live from GitHub.",
-            "footer.col.page": "Page",
-            "footer.col.external": "External",
-            "footer.api": "GitHub API",
-            "footer.copyright": "© 2026 UniphaOS.",
-            "footer.source": "Data source: GitHub REST API v3."
-        },
-
-        ja: {
-            "meta.title": "UniphaOS — GitHub オーガニゼーション",
-            "nav.repos": "リポジトリ",
-            "nav.community": "コミュニティ",
-            "nav.github": "GitHub",
-            "hero.badge": "GitHub オーガニゼーション",
-            "hero.fallback": "公開プロジェクトとアクティビティは GitHub で確認できます。",
-            "hero.stat.repos": "公開リポジトリ",
-            "hero.stat.followers": "フォロワー",
-            "hero.cta.github": "GitHub オーガニゼーションを開く",
-            "hero.cta.browse": "リポジトリを見る",
-            "repos.title": "リポジトリ",
-            "repos.desc": "UniphaOS オーガニゼーションの公開リポジトリを GitHub からリアルタイムに取得して表示しています。",
-            "repos.loading": "GitHub からリポジトリを読み込んでいます…",
-            "repos.empty": "公開リポジトリが見つかりませんでした。",
-            "repos.noDescription": "説明は登録されていません。",
-            "repos.error.notfound": "GitHub 上に該当するオーガニゼーションが見つかりませんでした。",
-            "repos.error.ratelimit": "GitHub API のレート制限に達しました。しばらくしてから再試行してください。",
-            "repos.error.generic": "GitHub からリポジトリを読み込めませんでした。",
-            "repos.retry": "再試行",
-            "repos.fork": "フォーク",
-            "repos.archived": "アーカイブ",
-            "repos.updated": "更新",
-            "repos.viewAll": "GitHub ですべて見る",
-            "community.title": "コミュニティ",
-            "community.desc": "すべての活動は GitHub 上で行われています。",
-            "community.box.title": "GitHub 上の UniphaOS",
-            "community.box.text": "ソースコードの閲覧、アクティビティの追跡、Issue の報告、Pull Request の作成をオーガニゼーションから直接行えます。",
-            "community.box.cta": "オーガニゼーションを開く",
-            "footer.tagline": "このページの情報はすべて GitHub からリアルタイムに取得しています。",
-            "footer.col.page": "ページ",
-            "footer.col.external": "外部リンク",
-            "footer.api": "GitHub API",
-            "footer.copyright": "© 2026 UniphaOS.",
-            "footer.source": "データ提供: GitHub REST API v3."
-        },
-
-        zh: {
-            "meta.title": "UniphaOS — GitHub 组织",
-            "nav.repos": "仓库",
-            "nav.community": "社区",
-            "nav.github": "GitHub",
-            "hero.badge": "GitHub 组织",
-            "hero.fallback": "公开项目与动态可在 GitHub 上查看。",
-            "hero.stat.repos": "公开仓库",
-            "hero.stat.followers": "关注者",
-            "hero.cta.github": "打开 GitHub 组织",
-            "hero.cta.browse": "浏览仓库",
-            "repos.title": "仓库",
-            "repos.desc": "以下列表从 GitHub 实时获取 UniphaOS 组织的公开仓库。",
-            "repos.loading": "正在从 GitHub 加载仓库…",
-            "repos.empty": "未找到公开仓库。",
-            "repos.noDescription": "未提供说明。",
-            "repos.error.notfound": "在 GitHub 上未找到该组织。",
-            "repos.error.ratelimit": "已达到 GitHub API 速率限制，请稍后重试。",
-            "repos.error.generic": "无法从 GitHub 加载仓库。",
-            "repos.retry": "重试",
-            "repos.fork": "复刻",
-            "repos.archived": "已归档",
-            "repos.updated": "更新于",
-            "repos.viewAll": "在 GitHub 上查看全部",
-            "community.title": "社区",
-            "community.desc": "一切活动都在 GitHub 上进行。",
-            "community.box.title": "GitHub 上的 UniphaOS",
-            "community.box.text": "您可以直接在组织中浏览源代码、关注动态、提交 Issue 和 Pull Request。",
-            "community.box.cta": "打开组织",
-            "footer.tagline": "本页所有信息均实时取自 GitHub。",
-            "footer.col.page": "页面",
-            "footer.col.external": "外部链接",
-            "footer.api": "GitHub API",
-            "footer.copyright": "© 2026 UniphaOS.",
-            "footer.source": "数据来源：GitHub REST API v3。"
-        },
-
-        ko: {
-            "meta.title": "UniphaOS — GitHub 조직",
-            "nav.repos": "저장소",
-            "nav.community": "커뮤니티",
-            "nav.github": "GitHub",
-            "hero.badge": "GitHub 조직",
-            "hero.fallback": "공개 프로젝트와 활동은 GitHub에서 확인할 수 있습니다.",
-            "hero.stat.repos": "공개 저장소",
-            "hero.stat.followers": "팔로워",
-            "hero.cta.github": "GitHub 조직 열기",
-            "hero.cta.browse": "저장소 살펴보기",
-            "repos.title": "저장소",
-            "repos.desc": "UniphaOS 조직의 공개 저장소 목록을 GitHub에서 실시간으로 가져옵니다.",
-            "repos.loading": "GitHub에서 저장소를 불러오는 중…",
-            "repos.empty": "공개 저장소가 없습니다.",
-            "repos.noDescription": "설명이 없습니다.",
-            "repos.error.notfound": "GitHub에서 해당 조직을 찾을 수 없습니다.",
-            "repos.error.ratelimit": "GitHub API 요청 한도를 초과했습니다. 잠시 후 다시 시도해 주세요.",
-            "repos.error.generic": "GitHub에서 저장소를 불러오지 못했습니다.",
-            "repos.retry": "다시 시도",
-            "repos.fork": "포크",
-            "repos.archived": "보관됨",
-            "repos.updated": "업데이트",
-            "repos.viewAll": "GitHub에서 모두 보기",
-            "community.title": "커뮤니티",
-            "community.desc": "모든 활동은 GitHub에서 이루어집니다.",
-            "community.box.title": "GitHub의 UniphaOS",
-            "community.box.text": "조직에서 직접 소스 코드를 살펴보고, 활동을 팔로우하며, 이슈를 제보하고 풀 리퀘스트를 열 수 있습니다.",
-            "community.box.cta": "조직 열기",
-            "footer.tagline": "이 페이지의 모든 정보는 GitHub에서 실시간으로 가져옵니다.",
-            "footer.col.page": "페이지",
-            "footer.col.external": "외부 링크",
-            "footer.api": "GitHub API",
-            "footer.copyright": "© 2026 UniphaOS.",
-            "footer.source": "데이터 출처: GitHub REST API v3."
-        },
-
-        es: {
-            "meta.title": "UniphaOS — Organización en GitHub",
-            "nav.repos": "Repositorios",
-            "nav.community": "Comunidad",
-            "nav.github": "GitHub",
-            "hero.badge": "Organización en GitHub",
-            "hero.fallback": "Los proyectos y la actividad públicos están disponibles en GitHub.",
-            "hero.stat.repos": "Repositorios públicos",
-            "hero.stat.followers": "Seguidores",
-            "hero.cta.github": "Abrir la organización en GitHub",
-            "hero.cta.browse": "Explorar repositorios",
-            "repos.title": "Repositorios",
-            "repos.desc": "Lista en vivo de los repositorios públicos de la organización UniphaOS en GitHub.",
-            "repos.loading": "Cargando repositorios desde GitHub…",
-            "repos.empty": "No se encontraron repositorios públicos.",
-            "repos.noDescription": "Sin descripción.",
-            "repos.error.notfound": "La organización no se encontró en GitHub.",
-            "repos.error.ratelimit": "Se alcanzó el límite de la API de GitHub. Inténtalo de nuevo más tarde.",
-            "repos.error.generic": "No se pudieron cargar los repositorios desde GitHub.",
-            "repos.retry": "Reintentar",
-            "repos.fork": "Bifurcado",
-            "repos.archived": "Archivado",
-            "repos.updated": "Actualizado",
-            "repos.viewAll": "Ver todo en GitHub",
-            "community.title": "Comunidad",
-            "community.desc": "Todo ocurre en GitHub.",
-            "community.box.title": "UniphaOS en GitHub",
-            "community.box.text": "Explora el código fuente, sigue la actividad, reporta incidencias y abre pull requests directamente en la organización.",
-            "community.box.cta": "Abrir organización",
-            "footer.tagline": "Toda la información de esta página se obtiene en vivo desde GitHub.",
-            "footer.col.page": "Página",
-            "footer.col.external": "Externo",
-            "footer.api": "API de GitHub",
-            "footer.copyright": "© 2026 UniphaOS.",
-            "footer.source": "Fuente de datos: GitHub REST API v3."
-        },
-
-        de: {
-            "meta.title": "UniphaOS — GitHub-Organisation",
-            "nav.repos": "Repositories",
-            "nav.community": "Community",
-            "nav.github": "GitHub",
-            "hero.badge": "GitHub-Organisation",
-            "hero.fallback": "Öffentliche Projekte und Aktivitäten sind auf GitHub verfügbar.",
-            "hero.stat.repos": "Öffentliche Repositories",
-            "hero.stat.followers": "Follower",
-            "hero.cta.github": "GitHub-Organisation öffnen",
-            "hero.cta.browse": "Repositories durchsuchen",
-            "repos.title": "Repositories",
-            "repos.desc": "Live-Liste der öffentlichen Repositories der UniphaOS-Organisation auf GitHub.",
-            "repos.loading": "Repositories werden von GitHub geladen…",
-            "repos.empty": "Keine öffentlichen Repositories gefunden.",
-            "repos.noDescription": "Keine Beschreibung vorhanden.",
-            "repos.error.notfound": "Die Organisation wurde auf GitHub nicht gefunden.",
-            "repos.error.ratelimit": "Das Rate-Limit der GitHub-API wurde erreicht. Bitte später erneut versuchen.",
-            "repos.error.generic": "Repositories konnten nicht von GitHub geladen werden.",
-            "repos.retry": "Erneut versuchen",
-            "repos.fork": "Fork",
-            "repos.archived": "Archiviert",
-            "repos.updated": "Aktualisiert",
-            "repos.viewAll": "Alle auf GitHub ansehen",
-            "community.title": "Community",
-            "community.desc": "Alles findet auf GitHub statt.",
-            "community.box.title": "UniphaOS auf GitHub",
-            "community.box.text": "Durchsuchen Sie den Quellcode, verfolgen Sie Aktivitäten, melden Sie Issues und öffnen Sie Pull Requests direkt in der Organisation.",
-            "community.box.cta": "Organisation öffnen",
-            "footer.tagline": "Alle Informationen auf dieser Seite werden live von GitHub abgerufen.",
-            "footer.col.page": "Seite",
-            "footer.col.external": "Extern",
-            "footer.api": "GitHub-API",
-            "footer.copyright": "© 2026 UniphaOS.",
-            "footer.source": "Datenquelle: GitHub REST API v3."
-        }
-    };
-
-    /* ==========================================================
-       State
-       ========================================================== */
     var state = {
-        lang: "en",
         org: null,
-        orgError: null,
         repos: null,
-        reposStatus: "loading", // loading | success | error | empty
+        reposStatus: "loading",
         reposError: null
     };
 
-    /* ==========================================================
-       DOM refs
-       ========================================================== */
     var $ = function (id) { return document.getElementById(id); };
 
-    var langSelect = $("lang-select");
     var nav = $("primary-nav");
     var navToggle = $("nav-toggle");
     var reposContainer = $("repos-container");
@@ -1168,15 +822,18 @@
     var statRepos = $("stat-repos");
     var statFollowers = $("stat-followers");
 
-    /* ==========================================================
-       Helpers
-       ========================================================== */
-    function t(key) {
-        var dict = translations[state.lang] || translations.en;
-        if (Object.prototype.hasOwnProperty.call(dict, key)) return dict[key];
-        if (Object.prototype.hasOwnProperty.call(translations.en, key)) return translations.en[key];
-        return key;
-    }
+    var STRINGS = {
+        noDescription: "No description provided.",
+        fork: "Fork",
+        archived: "Archived",
+        updated: "Updated",
+        empty: "No public repositories found.",
+        errorNotFound: "The organization was not found on GitHub.",
+        errorRateLimit: "GitHub API rate limit reached. Please try again later.",
+        errorGeneric: "Could not load repositories from GitHub.",
+        retry: "Retry",
+        heroFallback: "Public projects and activity are available on GitHub."
+    };
 
     function escapeHtml(value) {
         return String(value == null ? "" : value).replace(/[&<>"']/g, function (c) {
@@ -1184,13 +841,9 @@
         });
     }
 
-    function escapeAttr(value) {
-        return escapeHtml(value);
-    }
-
     function formatNumber(n) {
         try {
-            return new Intl.NumberFormat(state.lang).format(n);
+            return new Intl.NumberFormat("en-US").format(n);
         } catch (e) {
             return String(n);
         }
@@ -1203,17 +856,17 @@
 
         var diffSec = Math.round((date.getTime() - Date.now()) / 1000);
         var units = [
-            ["year",   31536000],
-            ["month",   2592000],
-            ["week",     604800],
-            ["day",       86400],
-            ["hour",       3600],
-            ["minute",       60]
+            ["year", 31536000],
+            ["month", 2592000],
+            ["week", 604800],
+            ["day", 86400],
+            ["hour", 3600],
+            ["minute", 60]
         ];
 
         var formatter;
         try {
-            formatter = new Intl.RelativeTimeFormat(state.lang, { numeric: "auto" });
+            formatter = new Intl.RelativeTimeFormat("en-US", { numeric: "auto" });
         } catch (e) {
             formatter = null;
         }
@@ -1230,26 +883,6 @@
         return formatter ? formatter.format(diffSec, "second") : "just now";
     }
 
-    /* ==========================================================
-       Static i18n
-       ========================================================== */
-    function applyStaticTranslations() {
-        var nodes = document.querySelectorAll("[data-i18n]");
-        for (var i = 0; i < nodes.length; i++) {
-            var key = nodes[i].getAttribute("data-i18n");
-            nodes[i].textContent = t(key);
-        }
-
-        var titleEl = document.querySelector("title");
-        if (titleEl) titleEl.textContent = t("meta.title");
-
-        var metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) metaDesc.setAttribute("content", t("meta.description") || t("footer.tagline"));
-    }
-
-    /* ==========================================================
-       Render — Organization header
-       ========================================================== */
     function renderOrg() {
         if (!orgAvatar || !orgName || !orgHandle || !heroLead || !heroStats) return;
 
@@ -1277,7 +910,7 @@
             } else if (state.org.bio) {
                 heroLead.textContent = state.org.bio;
             } else {
-                heroLead.textContent = t("hero.fallback");
+                heroLead.textContent = STRINGS.heroFallback;
             }
 
             if (typeof state.org.public_repos === "number") {
@@ -1291,14 +924,11 @@
             orgAvatar.hidden = true;
             orgName.textContent = ORG_NAME;
             orgHandle.hidden = true;
-            heroLead.textContent = t("hero.fallback");
+            heroLead.textContent = STRINGS.heroFallback;
             heroStats.hidden = true;
         }
     }
 
-    /* ==========================================================
-       Render — Repositories
-       ========================================================== */
     function renderReposLoading() {
         reposContainer.innerHTML =
             '<div class="skeleton-grid">' +
@@ -1306,13 +936,13 @@
             '</div>';
     }
 
-    function renderReposState(messageKey, showRetry) {
-        var html = '<div class="state">' + escapeHtml(t(messageKey));
+    function renderReposState(message, showRetry) {
+        var html = '<div class="state">' + escapeHtml(message);
         if (showRetry) {
             html +=
                 '<div class="state__actions">' +
                 '<button type="button" class="btn btn-secondary" id="repos-retry">' +
-                escapeHtml(t("repos.retry")) +
+                escapeHtml(STRINGS.retry) +
                 '</button></div>';
         }
         html += "</div>";
@@ -1326,7 +956,7 @@
 
     function renderReposList(repos) {
         if (!repos || repos.length === 0) {
-            renderReposState("repos.empty", false);
+            renderReposState(STRINGS.empty, false);
             return;
         }
 
@@ -1340,17 +970,17 @@
 
     function repoCardHtml(repo) {
         var name = escapeHtml(repo.name || "");
-        var url = escapeAttr(repo.html_url || (ORG_URL + "/" + (repo.name || "")));
+        var url = escapeHtml(repo.html_url || (ORG_URL + "/" + (repo.name || "")));
         var desc = repo.description
             ? escapeHtml(repo.description)
-            : '<span class="muted">' + escapeHtml(t("repos.noDescription")) + "</span>";
+            : '<span class="muted">' + escapeHtml(STRINGS.noDescription) + "</span>";
 
         var badges = "";
         if (repo.fork) {
-            badges += '<span class="repo-card__badge">' + escapeHtml(t("repos.fork")) + "</span>";
+            badges += '<span class="repo-card__badge">' + escapeHtml(STRINGS.fork) + "</span>";
         }
         if (repo.archived) {
-            badges += '<span class="repo-card__badge">' + escapeHtml(t("repos.archived")) + "</span>";
+            badges += '<span class="repo-card__badge">' + escapeHtml(STRINGS.archived) + "</span>";
         }
 
         var meta = "";
@@ -1383,7 +1013,7 @@
         if (updatedIso) {
             meta +=
                 '<span class="repo-meta__item">' +
-                escapeHtml(t("repos.updated")) + " " +
+                escapeHtml(STRINGS.updated) + " " +
                 escapeHtml(formatRelativeDate(updatedIso)) +
                 "</span>";
         }
@@ -1409,22 +1039,19 @@
             return;
         }
         if (state.reposStatus === "error") {
-            var key = "repos.error.generic";
-            if (state.reposError === "notfound") key = "repos.error.notfound";
-            else if (state.reposError === "ratelimit") key = "repos.error.ratelimit";
-            renderReposState(key, true);
+            var message = STRINGS.errorGeneric;
+            if (state.reposError === "notfound") message = STRINGS.errorNotFound;
+            else if (state.reposError === "ratelimit") message = STRINGS.errorRateLimit;
+            renderReposState(message, true);
             return;
         }
         if (state.reposStatus === "empty") {
-            renderReposState("repos.empty", false);
+            renderReposState(STRINGS.empty, false);
             return;
         }
         renderReposList(state.repos);
     }
 
-    /* ==========================================================
-       Data loading
-       ========================================================== */
     function classifyError(status) {
         if (status === 404) return "notfound";
         if (status === 403 || status === 429) return "ratelimit";
@@ -1445,12 +1072,10 @@
         })
         .then(function (data) {
             state.org = data;
-            state.orgError = null;
             renderOrg();
         })
-        .catch(function (err) {
+        .catch(function () {
             state.org = null;
-            state.orgError = err.code || "http";
             renderOrg();
         });
     }
@@ -1488,47 +1113,6 @@
         });
     }
 
-    /* ==========================================================
-       Language
-       ========================================================== */
-    function applyLanguage(code) {
-        if (SUPPORTED.indexOf(code) === -1) code = "en";
-        state.lang = code;
-        document.documentElement.setAttribute("lang", code);
-
-        applyStaticTranslations();
-        renderOrg();
-        renderRepos();
-
-        if (langSelect && langSelect.value !== code) langSelect.value = code;
-
-        try { window.localStorage.setItem(STORAGE_KEY, code); } catch (e) {}
-    }
-
-    function detectLanguage() {
-        var saved = null;
-        try { saved = window.localStorage.getItem(STORAGE_KEY); } catch (e) { saved = null; }
-        if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
-
-        var list = (navigator.languages && navigator.languages.length)
-            ? navigator.languages
-            : [navigator.language || "en"];
-
-        for (var i = 0; i < list.length; i++) {
-            var tag = String(list[i]).toLowerCase();
-            if (tag.indexOf("ja") === 0) return "ja";
-            if (tag.indexOf("zh") === 0) return "zh";
-            if (tag.indexOf("ko") === 0) return "ko";
-            if (tag.indexOf("es") === 0) return "es";
-            if (tag.indexOf("de") === 0) return "de";
-            if (tag.indexOf("en") === 0) return "en";
-        }
-        return "en";
-    }
-
-    /* ==========================================================
-       Nav / scroll
-       ========================================================== */
     if (navToggle && nav) {
         navToggle.addEventListener("click", function () {
             var isOpen = nav.classList.toggle("open");
@@ -1555,18 +1139,6 @@
         });
     }
 
-    /* ==========================================================
-       Init
-       ========================================================== */
-    if (langSelect) {
-        langSelect.addEventListener("change", function () {
-            applyLanguage(langSelect.value);
-        });
-    }
-
-    applyLanguage(detectLanguage());
-
-    // Kick off live GitHub fetches (org info + repositories).
     loadOrg();
     loadRepos();
 
